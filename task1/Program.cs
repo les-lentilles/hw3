@@ -3,18 +3,31 @@
 // 12821 -> да
 // 23432 -> да
 
-Console.Clear();
+void palindrom()
+{
 Console.WriteLine("Введите пятизначное число: ");
-string number = Console.ReadLine();
+int number = int.Parse(Console.ReadLine());
 
-void CheckingNumber(string number){
-  if (number[0]==number[4] || number[1]==number[3]){
-    Console.WriteLine($"Ваше число: {number} - палиндром.");
-  }
-  else Console.WriteLine($"Ваше число: {number} - НЕ палиндром.");
+int num1 = number / 10000 % 10;
+int num2 = number / 1000 % 10;
+int num3 = number / 10 % 10;
+int num4 = number % 10;
+int num5 = number / 10000;
+        
+if (num5 < 1 || num5 > 9)
+{
+Console.WriteLine(number + " -> " + "Not 5-digit number");
 }
-
-if (number!.Length == 5){
-  CheckingNumber(number);
+else if  (num1 == num4 && num2 == num3)
+{
+Console.WriteLine(number + " -> Yes, this is palindrom");
 }
-else Console.WriteLine($"Введи правильное число");
+else
+{
+Console.WriteLine(number + " -> No, this is not palindrom");
+}
+}
+for (int i = 0; i < 10; i++)
+{ 
+palindrom();
+}
