@@ -12,19 +12,19 @@ int num1 = number / 10000 % 10;
 int num2 = number / 1000 % 10;
 int num4 = number / 10 % 10;
 int num5 = number % 10;
-int num6 = number / 10000;
+int total = number / 10000;
         
-if (num6 < 1 || num6 > 9)
+if (total < 1 || total > 9)
 {
-Console.WriteLine(number + " -> " + "Not 5-digit number");
+     Console.WriteLine($"Пожалуйста, введите правильное число");
 }
 else if  (num1 == num5 && num2 == num4)
 {
-Console.WriteLine(number + " -> Yes, this is palindrom");
+     Console.WriteLine($"Ваше число: {number} - палиндром.");
 }
 else
 {
-Console.WriteLine(number + " -> No, this is not palindrom");
+    Console.WriteLine($"Ваше число: {number} - не палиндром.");
 }
 }
 for (int i = 0; i < 10; i++)
